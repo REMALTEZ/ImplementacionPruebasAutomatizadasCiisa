@@ -15,3 +15,4 @@ public class Test_CasoDePruebaDemoQA0002 {
     }
 
 }
+git init
