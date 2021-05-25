@@ -1,5 +1,6 @@
 package pages;
 
+import com.aventstack.extentreports.Status;
 import javafx.scene.control.Tab;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +12,7 @@ import org.testng.Assert;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
+import static utils.HtmlReport.addWebReportImage;
 import static utils.Utils.seleccionComboboxEnSelect;
 
 
@@ -33,6 +35,7 @@ public class PageDemoQA {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
 
+
         /** Entro a la Pagina y recorro***********************************************************************************************/
         By imgToolsQA = By.xpath("//body[1]/div[1]/header[1]/a[1]/img[1]");
         WebElement webimgToolsQA = driver.findElement(imgToolsQA);
@@ -44,6 +47,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Click en Page ToolsQA");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By botonElements = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]");
         WebElement webbotonElements = driver.findElement(botonElements);
@@ -53,8 +57,10 @@ public class PageDemoQA {
             Assert.assertTrue(true);
         } else {
             System.out.println("No es  Posible realizar Click en Page ToolsQA");
-            Assert.assertTrue(false);
+            //Assert.assertTrue(false);
+            addWebReportImage("prueba", "accion del caso prueba", Status.PASS, true);
         }
+
         Thread.sleep(500);
         By botonTextBox = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]");
         WebElement webbotonTextBox = driver.findElement(botonTextBox);
@@ -66,6 +72,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Click en Boton TextBox");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By txtFullName = By.id("userName");
         WebElement webtxtFullName = driver.findElement(txtFullName);
@@ -75,8 +82,9 @@ public class PageDemoQA {
             Assert.assertTrue(true);
         } else {
             System.out.println("No es  Posible realizar Ingreso de Full Name");
-            Assert.assertTrue(true);
+            Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By txtEmailTB = By.id("userEmail");
         WebElement webtxtEmailTB = driver.findElement(txtEmailTB);
@@ -88,6 +96,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Email");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By txtDireccion = By.id("currentAddress");
         WebElement webtxtDireccion = driver.findElement(txtDireccion);
@@ -99,6 +108,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Direccion");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By txtDireccionPerm = By.id("permanentAddress");
         WebElement webtxtDireccionPerm = driver.findElement(txtDireccionPerm);
@@ -110,6 +120,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Direccion Permanente");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(500);
         By botonSumit = By.id("submit");
         WebElement webtbotonSumit = driver.findElement(botonSumit);
@@ -121,12 +132,13 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click en boton Sumit ");
             Assert.assertTrue(false);
         }
-
         /**************************************************************************************************************************/
 
+        /**-->Luego cambiar a Page esta clase
         /** OBJETOS PERTENECIENTES A OPCION ELEMENTS CHECKBOX*********************************************************************/
         By botonCheckbox = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]");
         WebElement webBotonCheckbox = driver.findElement(botonCheckbox);
+        Thread.sleep(300);
         if (webBotonCheckbox.isDisplayed()) {
             wait.until(ExpectedConditions.elementToBeClickable(webBotonCheckbox)).click();
             System.out.println("Se realiza click en opcion ChecBox del menu lateral izquierdo");
@@ -135,6 +147,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click en boton Sumit ");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By btonMasCheckbox = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ol[1]/li[1]/span[1]/button[1]");
         WebElement webBtonMasCheckbox = driver.findElement(btonMasCheckbox);
         if (webBtonMasCheckbox.isDisplayed()) {
@@ -145,6 +159,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click en + que espande el arbol del checkbox");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By seleccionCheckBox = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ol[1]/li[1]/span[1]/label[1]/span[1]");
         WebElement webSeleccionCheckBox = driver.findElement(seleccionCheckBox);
         if (webSeleccionCheckBox.isDisplayed()) {
@@ -155,6 +171,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click Seleccionador que expande el arbol del checkbox");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By FlechaAbajoExpandeUno = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ol[1]/li[1]/ol[1]/li[1]/span[1]/button[1]");
         WebElement webFlechaAbajoExpandeUno = driver.findElement(FlechaAbajoExpandeUno);
         if (webFlechaAbajoExpandeUno.isDisplayed()) {
@@ -165,6 +183,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click Seleccionador que expande el arbol del checkbox");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By FlechaAbajoExpandeDos = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ol[1]/li[1]/ol[1]/li[2]/span[1]/button[1]");
         WebElement webFlechaAbajoExpandeDos = driver.findElement(FlechaAbajoExpandeDos);
         if (webFlechaAbajoExpandeDos.isDisplayed()) {
@@ -175,6 +195,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click Seleccionador que expande el arbol del checkbox");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By BotonMas = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]");
         WebElement webBotonMas = driver.findElement(BotonMas);
         if (webBotonMas.isDisplayed()) {
@@ -185,6 +207,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click + que expande el arbol del checkbox");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By BotonMenos = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[2]");
         WebElement webBotonMenos = driver.findElement(BotonMenos);
         if (webBotonMenos.isDisplayed()) {
@@ -197,6 +221,8 @@ public class PageDemoQA {
         }
         /************************************************************************************************************************/
 
+
+        /**-->Luego cambiar a Page esta clase
         /** OBJETOS PERTENECIENTES A OPCION ELEMENTS RADIO BUTON*********************************************************************/
         By BotonRadioButton = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]");
         WebElement webBotonRadioButton = driver.findElement(BotonRadioButton);
@@ -208,6 +234,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click menu lateral Radio Button");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By OptionYes = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/label[1]");
         WebElement webOptionYes = driver.findElement(OptionYes);
         if (webOptionYes.isDisplayed()) {
@@ -218,6 +246,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click option Yes");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By OptionImpres = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]");
         WebElement webOptionImpres = driver.findElement(OptionImpres);
         if (webOptionImpres.isDisplayed()) {
@@ -230,6 +260,8 @@ public class PageDemoQA {
         }
         /***************************************************************************************************************************/
 
+
+        /**-->Luego cambiar a Page esta clase
         /** OBJETOS PERTENECIENTES A OPCION ELEMENTS WEB TABLES*********************************************************************/
         By BotonWebTable = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]");
         WebElement webBotonWebTable = driver.findElement(BotonWebTable);
@@ -241,6 +273,8 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click Menu Lateral Web Table");
             Assert.assertTrue(false);
         }
+
+        Thread.sleep(300);
         By BotonADD = By.id("addNewRecordButton");
         WebElement webBotonADD = driver.findElement(BotonADD);
         if (webBotonADD.isDisplayed()) {
@@ -251,10 +285,12 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click ADD de web table");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtFullNameWT = By.xpath("//body[1]/div[3]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/input[1]");
         WebElement webtxtFullNameTB = driver.findElement(txtFullNameWT);
         webtxtFullNameTB.sendKeys("Rodrigo");
+
         Thread.sleep(200);
         By txtLastNameWT = By.id("lastName");
         WebElement webtxtLastNameWT = driver.findElement(txtLastNameWT);
@@ -266,6 +302,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de last Name");
             Assert.assertTrue(true);
         }
+
         Thread.sleep(200);
         By txtEmailWT = By.id("userEmail");
         WebElement webtxtEmailWT = driver.findElement(txtEmailWT);
@@ -277,6 +314,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Email");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtEdad = By.id("age");
         WebElement webtxtEdad = driver.findElement(txtEdad);
@@ -288,6 +326,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de EDAD");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtSalario = By.id("salary");
         WebElement webtxtSalario = driver.findElement(txtSalario);
@@ -299,6 +338,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Salario");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtDepartamento = By.id("department");
         WebElement webtxtDepartamento = driver.findElement(txtDepartamento);
@@ -310,6 +350,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Departamento");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By BotonSumitWT = By.id("submit");
         WebElement webBotonSumitWT = driver.findElement(BotonSumitWT);
@@ -322,6 +363,7 @@ public class PageDemoQA {
             Assert.assertTrue(false);
         }
         Thread.sleep(500);
+        /***********************************************************************************************************************/
         /**-->1-**Repito Ingreso************************************************************************************************/
         if (webBotonADD.isDisplayed()) {
             wait.until(ExpectedConditions.elementToBeClickable(webBotonADD)).click();
@@ -335,6 +377,7 @@ public class PageDemoQA {
         WebElement webtxtFullNameTB1 = driver.findElement(txtFullNameWT1);
         webtxtFullNameTB1.sendKeys("Jonathan");
         Thread.sleep(200);
+
         By txtLastNameWT1 = By.id("lastName");
         WebElement webtxtLastNameWT1 = driver.findElement(txtLastNameWT1);
         if (webtxtLastNameWT1.isDisplayed()) {
@@ -346,6 +389,7 @@ public class PageDemoQA {
             Assert.assertTrue(true);
         }
         Thread.sleep(200);
+
         By txtEmailWT1 = By.id("userEmail");
         WebElement webtxtEmailWT1 = driver.findElement(txtEmailWT1);
         if (webtxtEmailWT1.isDisplayed()) {
@@ -356,6 +400,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Email");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtEdad1 = By.id("age");
         WebElement webtxtEdad1 = driver.findElement(txtEdad1);
@@ -367,6 +412,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de EDAD");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtSalario1 = By.id("salary");
         WebElement webtxtSalario1 = driver.findElement(txtSalario1);
@@ -378,6 +424,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Salario");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtDepartamento1 = By.id("department");
         WebElement webtxtDepartamento1 = driver.findElement(txtDepartamento1);
@@ -389,7 +436,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Departamento");
             Assert.assertTrue(false);
         }
-        //By BotonSumitWT = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]");
+
         Thread.sleep(200);
         By BotonSumitWT1 = By.id("submit");
         WebElement webBotonSumitWT1 = driver.findElement(BotonSumitWT1);
@@ -402,8 +449,7 @@ public class PageDemoQA {
             Assert.assertTrue(false);
         }
         /*****************************************************************************************************************************/
-
-        /**-->2-**Repito Ingreso************************************************************************************************/
+        /**-->2-**Repito Ingreso******************************************************************************************************/
         if (webBotonADD.isDisplayed()) {
             wait.until(ExpectedConditions.elementToBeClickable(webBotonADD)).click();
             System.out.println("Se realiza click ADD de web table");
@@ -412,9 +458,11 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click ADD de web table");
             Assert.assertTrue(false);
         }
+
         By txtFullNameWT2 = By.xpath("//body[1]/div[3]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/input[1]");
-        WebElement webtxtFullNameTB2 = driver.findElement(txtFullNameWT1);
+        WebElement webtxtFullNameTB2 = driver.findElement(txtFullNameWT2);
         webtxtFullNameTB2.sendKeys("Juan Francisco");
+
         Thread.sleep(200);
         By txtLastNameWT2 = By.id("lastName");
         WebElement webtxtLastNameWT2 = driver.findElement(txtLastNameWT2);
@@ -426,6 +474,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de last Name");
             Assert.assertTrue(true);
         }
+
         Thread.sleep(200);
         By txtEmailWT2 = By.id("userEmail");
         WebElement webtxtEmailWT2 = driver.findElement(txtEmailWT2);
@@ -437,6 +486,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Email");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtEdad2 = By.id("age");
         WebElement webtxtEdad2 = driver.findElement(txtEdad2);
@@ -448,6 +498,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de EDAD");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtSalario2 = By.id("salary");
         WebElement webtxtSalario2 = driver.findElement(txtSalario2);
@@ -459,6 +510,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Salario");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(200);
         By txtDepartamento2 = By.id("department");
         WebElement webtxtDepartamento2 = driver.findElement(txtDepartamento2);
@@ -470,10 +522,10 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Departamento");
             Assert.assertTrue(false);
         }
-        //By BotonSumitWT = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]");
+
         Thread.sleep(200);
         By BotonSumitWT2 = By.id("submit");
-        WebElement webBotonSumitWT2 = driver.findElement(BotonSumitWT1);
+        WebElement webBotonSumitWT2 = driver.findElement(BotonSumitWT2);
         if (webBotonSumitWT2.isDisplayed()) {
             wait.until(ExpectedConditions.elementToBeClickable(webBotonSumitWT2)).submit();
             System.out.println("Se realiza click Sumit Web Tables");
@@ -482,7 +534,6 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar click Menu Lateral Web Table");
             Assert.assertTrue(false);
         }
-        /********************************************************************************************************************************/
 
         //Fin Elements
         By botonFlechaSube = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[2]");
@@ -490,19 +541,21 @@ public class PageDemoQA {
         wait.until(ExpectedConditions.elementToBeClickable(webbotonFlechaSube)).click();
         /***************************************************************************************************************************/
 
-        /** OBJETOS PERTENECIENTES A OPCION ELEMENTS FORMS*********************************************************************/
 
+        /**-->Luego cambiar a Page esta clase
+        /** OBJETOS PERTENECIENTES A OPCION ELEMENTS FORMS*********************************************************************/
         //Click ToolQA
         Thread.sleep(500);
         By ToolsQA = By.xpath("//*[@id=\"app\"]/header/a/img");
         wait.until(ExpectedConditions.elementToBeClickable(ToolsQA)).click();
-
+        Thread.sleep(500);
         By MenuCentralForms = By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div");
         wait.until(ExpectedConditions.elementToBeClickable(MenuCentralForms)).click();
-
+        Thread.sleep(200);
         By botonPracticForms = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]");
         wait.until(ExpectedConditions.elementToBeClickable(botonPracticForms)).click();
 
+        Thread.sleep(300);
         By txtNameF = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[1]/div[2]/input[1]");
         WebElement webtxtNameF = driver.findElement(txtNameF);
         if (webtxtNameF.isDisplayed()) {
@@ -513,6 +566,7 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Name");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(300);
         By txtlastNameF = By.id("lastName");
         WebElement webtxtlastNameF = driver.findElement(txtlastNameF);
@@ -524,10 +578,12 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Salario");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(300);
         By optionMasculino = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[3]/div[2]/div[1]/label[1]");
         WebElement weboptionMasculino = driver.findElement(optionMasculino);
         wait.until(ExpectedConditions.elementToBeClickable(weboptionMasculino)).click();
+
         Thread.sleep(300);
         By txtEmailF = By.id("userEmail");
         WebElement webtxtEmailF = driver.findElement(txtEmailF);
@@ -539,29 +595,34 @@ public class PageDemoQA {
             System.out.println("No es  Posible realizar Ingreso de Salario");
             Assert.assertTrue(false);
         }
+
         Thread.sleep(300);
-            By txtMobile = By.id("userNumber");
-            WebElement webtxtMobile = driver.findElement(txtMobile);
-            if (webtxtMobile.isDisplayed()) {
-                webtxtMobile.sendKeys("1234567890");
-                System.out.println("Se realiza Ingreso Numero Mobile");
-                Assert.assertTrue(true);
-            } else {
-                System.out.println("No es  Posible realizar Ingreso Numero Mobile");
-                Assert.assertTrue(false);
-            }
+        By txtMobile = By.id("userNumber");
+        WebElement webtxtMobile = driver.findElement(txtMobile);
+        if (webtxtMobile.isDisplayed()) {
+            webtxtMobile.sendKeys("1234567890");
+            System.out.println("Se realiza Ingreso Numero Mobile");
+            Assert.assertTrue(true);
+        } else {
+            System.out.println("No es  Posible realizar Ingreso Numero Mobile");
+            Assert.assertTrue(false);
+        }
+
         Thread.sleep(300);
             By optionDeporte = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[7]/div[2]/div[1]/label[1]");
             WebElement weboptionDeporte = driver.findElement(optionDeporte);
             wait.until(ExpectedConditions.elementToBeClickable(weboptionDeporte)).click();
+
         Thread.sleep(300);
             By optionLeer = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[7]/div[2]/div[2]/label[1]");
             WebElement webooptionLeer = driver.findElement(optionLeer);
             wait.until(ExpectedConditions.elementToBeClickable(webooptionLeer)).click();
+
         Thread.sleep(300);
             By optionMusic = By.xpath("//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/form[1]/div[7]/div[2]/div[3]/label[1]");
             WebElement weboptionMusic = driver.findElement(optionMusic);
             wait.until(ExpectedConditions.elementToBeClickable(weboptionMusic)).click();
+
         Thread.sleep(300);
             By txtDireccionF = By.id("currentAddress");
             WebElement webtxtDireccionF = driver.findElement(txtDireccionF);
@@ -573,6 +634,7 @@ public class PageDemoQA {
                 System.out.println("No es  Posible realizar Ingreso de Direccion");
                 Assert.assertTrue(false);
             }
+
         Thread.sleep(300);
             //seleccion de ComboBox Asignaturas
             By txtAsignaturas = By.id("subjectsInput");
@@ -592,8 +654,10 @@ public class PageDemoQA {
            wait.until(ExpectedConditions.elementToBeClickable(webCboselectCiudad)).click();
            Thread.sleep(500);
 
-
         /***************************************************************************************************************************/
+
+
+
 
         /********OPCION WIDGETS******************************************************************************************************************/
         wait.until(ExpectedConditions.elementToBeClickable(ToolsQA)).click();
@@ -620,14 +684,9 @@ public class PageDemoQA {
         Thread.sleep(300);
         By StarProgres= By.id("startStopButton");
         wait.until(ExpectedConditions.elementToBeClickable(StarProgres)).click();
-        Thread.sleep(10000);
+        Thread.sleep(11000);
         wait.until(ExpectedConditions.elementToBeClickable(ToolsQA)).click();
         /***************************************************************************************************************************/
-
-
-
-
-
 
 
 

@@ -9,10 +9,9 @@ public class Test_CasoDePruebaDemoQA0002 {
 
     public Test_CasoDePruebaDemoQA0002() { }
 
-    @Test
+@Test
     public void testFlujoPageOnlineDemoQA() throws InterruptedException {
         pageOnlineDemoQA.validaComprasOnline();
     }
 
 }
-git init

@@ -10,7 +10,7 @@ public class Test_CasoDePruebaDemoQA0001 {
     public Test_CasoDePruebaDemoQA0001() {
     }
 
-    @Test
+@Test
     public void testFlujoPageDemoQA() throws InterruptedException {
         PageDemoQA.validaPageDemoQA();
     }
