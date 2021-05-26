@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="126643" started-at="2021-05-26T18:33:42Z" finished-at="2021-05-26T18:35:49Z">
+  <suite name="Command line suite" duration-ms="132269" started-at="2021-05-26T19:08:01Z" finished-at="2021-05-26T19:10:14Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="126643" started-at="2021-05-26T18:33:42Z" finished-at="2021-05-26T18:35:49Z">
+    <test name="Command line test" duration-ms="132269" started-at="2021-05-26T19:08:01Z" finished-at="2021-05-26T19:10:14Z">
       <class name="testCases.Test_CasoDePruebaDemoQA0002">
-        <test-method status="PASS" signature="testFlujoPageOnlineDemoQA()[pri:0, instance:testCases.Test_CasoDePruebaDemoQA0002@6fb554cc]" name="testFlujoPageOnlineDemoQA" duration-ms="70385" started-at="2021-05-26T14:34:38Z" finished-at="2021-05-26T14:35:49Z">
+        <test-method status="PASS" signature="testFlujoPageOnlineDemoQA()[pri:0, instance:testCases.Test_CasoDePruebaDemoQA0002@6fb554cc]" name="testFlujoPageOnlineDemoQA" duration-ms="70451" started-at="2021-05-26T15:09:03Z" finished-at="2021-05-26T15:10:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFlujoPageOnlineDemoQA -->
       </class> <!-- testCases.Test_CasoDePruebaDemoQA0002 -->
       <class name="testCases.Test_CasoDePruebaDemoQA0001">
-        <test-method status="PASS" signature="testFlujoPageDemoQA()[pri:0, instance:testCases.Test_CasoDePruebaDemoQA0001@60addb54]" name="testFlujoPageDemoQA" duration-ms="56256" started-at="2021-05-26T14:33:42Z" finished-at="2021-05-26T14:34:38Z">
+        <test-method status="PASS" signature="testFlujoPageDemoQA()[pri:0, instance:testCases.Test_CasoDePruebaDemoQA0001@60addb54]" name="testFlujoPageDemoQA" duration-ms="61817" started-at="2021-05-26T15:08:01Z" finished-at="2021-05-26T15:09:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFlujoPageDemoQA -->
