@@ -112,7 +112,7 @@ public class Utils {
     }
 
     public WebDriver conexionDriver(){
-        String ruta = Paths.get(System.getProperty("user.dir"), "src/main/resources/driver/chromedriver.exe").toString();
+        String ruta = Paths.get(System.getProperty("user.dir"), "src/main/resources/driver/chromedriver_old.exe").toString();
 
         System.setProperty("webdriver.chrome.driver",ruta);
         this.driver = new ChromeDriver();
