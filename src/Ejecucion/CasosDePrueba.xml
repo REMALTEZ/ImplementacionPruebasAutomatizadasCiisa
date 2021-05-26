@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="pruebase">
+    <test name="Ejecucion de Script Automatizado Page http://DemoQA.com/">
+        <classes>
+            <class name="testCases.Test_CasoDePruebaDemoQA0001"  />
+        </classes>
+    </test>
+    <test name="Ejecucion de Script Automatizado Page http://advantageonlineshopping.com/">
+        <classes>
+            <class name="testCases.Test_CasoDePruebaDemoQA0002"  />
+        </classes>
+    </test>
+    </suite>

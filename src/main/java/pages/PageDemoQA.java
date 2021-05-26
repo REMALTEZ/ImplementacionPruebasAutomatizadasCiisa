@@ -1,19 +1,17 @@
 package pages;
 
-import com.aventstack.extentreports.Status;
-import javafx.scene.control.Tab;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
-import static utils.HtmlReport.addWebReportImage;
-import static utils.Utils.seleccionComboboxEnSelect;
+
 
 
 public class PageDemoQA {
@@ -57,8 +55,7 @@ public class PageDemoQA {
             Assert.assertTrue(true);
         } else {
             System.out.println("No es  Posible realizar Click en Page ToolsQA");
-            //Assert.assertTrue(false);
-            addWebReportImage("prueba", "accion del caso prueba", Status.PASS, true);
+            Assert.assertTrue(false);
         }
 
         Thread.sleep(500);
